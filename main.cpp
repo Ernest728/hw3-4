@@ -83,7 +83,7 @@ void playNote(int freq, int duration) {
     while (i--) {
         j = waveformLength;
         while (j--) {
-          Aout = waveform[j] * waveform[k*8];
+          Aout = (waveform[j] - 0.5)  * (waveform[k*8] - 0.5) + 0.5;
           wait_us(waitTime);
         }
     }
